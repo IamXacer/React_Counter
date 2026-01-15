@@ -1,0 +1,21 @@
+.btn {
+    font-size: 34px;
+    font-weight: 900;
+    padding: 10px 24px;
+    border-radius: 14px;
+    border: none;
+    background: #39d0ff;
+    color: #1f2330;
+    cursor: pointer;
+}
+
+.big {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 48px;
+}
+
+.btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}

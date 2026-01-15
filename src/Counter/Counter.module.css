@@ -1,0 +1,51 @@
+.panel {
+    width: 380px;
+    border: 2px solid #39d0ff;
+    border-radius: 16px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.display {
+    height: 190px;
+    border: 2px solid #39d0ff;
+    border-radius: 16px;
+    padding: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.count {
+    font-size: 96px;
+    font-weight: 900;
+    color: #39d0ff;
+}
+
+.red {
+    color: #ff4050;
+}
+
+.message {
+    font-size: 28px;
+    font-weight: 800;
+    color: #39d0ff;
+}
+
+.messageError {
+    font-size: 32px;
+    font-weight: 900;
+    color: #ff4050;
+}
+
+.buttons {
+    border: 2px solid #39d0ff;
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+}
