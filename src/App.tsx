@@ -3,11 +3,6 @@ import { useAppDispatch, useAppSelector } from "./hooks";
 import styles from "./App.module.css";
 
 import { Settings } from "./Settings/Settings";
-
-
-
-
-
 import {
     selectAppliedStart,
     selectCount, selectHasError, selectIsConfigured,
