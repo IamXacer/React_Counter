@@ -4,6 +4,7 @@ import styles from "./App.module.css";
 
 import { Settings } from "./Settings/Settings";
 import {
+    selectAppliedMax,
     selectAppliedStart,
     selectCount, selectHasError, selectIsConfigured,
     selectMaxValue,
@@ -18,6 +19,9 @@ const LS = {
     count: "count",
     start: "startValue",
     max: "maxValue",
+    appliedStart: "appliedStart",
+    appliedMax: "appliedMax",
+
 } as const;
 
 export default function App() {
@@ -27,6 +31,7 @@ export default function App() {
     const startValue = useAppSelector(selectStartValue);
     const maxValue = useAppSelector(selectMaxValue);
     const appliedStart = useAppSelector(selectAppliedStart);
+    const appliedMax = useAppSelector(selectAppliedMax);
 
     const hasError = useAppSelector(selectHasError);
     const isConfigured = useAppSelector(selectIsConfigured);
@@ -43,7 +48,14 @@ export default function App() {
         localStorage.setItem(LS.max, String(maxValue));
     }, [maxValue]);
 
-    const incDisabled = hasError || !isConfigured || count >= maxValue;
+    useEffect(() => {
+        localStorage.setItem(LS.appliedStart, String(appliedStart));
+    }, [appliedStart]);
+    useEffect(() => {
+        localStorage.setItem(LS.appliedMax, String(appliedMax));
+    }, [appliedMax]);
+
+    const incDisabled = hasError || !isConfigured || count >= appliedMax;
     const resetDisabled = hasError || !isConfigured || count === appliedStart;
     const setDisabled = hasError || isConfigured;
 
@@ -61,7 +73,7 @@ export default function App() {
 
             <Counter
                 count={count}
-                maxValue={maxValue}
+                maxValue={appliedMax}
                 hasError={hasError}
                 isConfigured={isConfigured}
                 onInc={() => dispatch(inc())}

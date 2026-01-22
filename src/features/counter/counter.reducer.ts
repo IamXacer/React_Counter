@@ -31,12 +31,12 @@ const LS = {
 /* ================= INITIAL STATE ================= */
 
 const initialState: CounterState = {
-    startValue: readNumber(LS.start, 0),
-    maxValue: readNumber(LS.max, 5),
-    count: readNumber(LS.count, 0),
+    startValue:readNumber(LS.start,0),
+    maxValue:readNumber(LS.max,5),
+    count:readNumber(LS.count,0),
 
-    appliedStart: readNumber(LS.appliedStart, readNumber(LS.start, 0)),
-    appliedMax: readNumber(LS.appliedMax, readNumber(LS.max, 5)),
+    appliedStart:readNumber(LS.appliedStart,readNumber(LS.start,0)),
+    appliedMax:readNumber(LS.appliedMax,readNumber(LS.max,5))
 };
 
 
